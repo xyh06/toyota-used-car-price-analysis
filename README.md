@@ -27,6 +27,7 @@ Performance: R² ≈ 0.86
 Market Price Index = Actual Price / Predicted Price
 
 Key Findings
+
 1️⃣ Depreciation Dominates
 
 Vehicle age and mileage explain most price variation.
