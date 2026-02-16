@@ -1,53 +1,57 @@
-# Toyota Used Car Price Analysis (Machine Learning)
+# Used Car Price Mechanism Analysis (Machine Learning)
 
-## Project Background
+## Background
 
-This project investigates the pricing mechanism of used Toyota vehicles using machine learning models.
-Instead of predicting price only, the goal is to understand **what determines used car value**.
+Understanding used-car pricing is important for buyers, sellers, and platforms.
+Instead of only predicting price, this project explains **how prices are formed**.
 
-Dataset: 6738 UK used Toyota vehicles (2013–2020)
+Dataset: 6,738 Toyota used cars (UK market, 2013–2020)
 
 ---
 
-## Objectives
+## Objective
 
 * Identify key factors affecting price
-* Build a market benchmark price model
-* Evaluate relative value retention across models
+* Build a market benchmark pricing model
+* Evaluate relative value retention of different models
 
 ---
 
-## Methodology
+## Method
 
-1. Data Cleaning (IQR outlier handling)
-2. Feature Engineering (age, mileage, engine specs)
-3. Random Forest Regression (R² ≈ 0.86 on test set)
-4. Price Index = Actual Price / Predicted Price
-
----
-
-## Key Findings
-
-* Price mainly driven by depreciation (age & mileage)
-* Engine parameters provide stable premium
-* Model preference affects relative valuation
-
-Used car market follows:
-
-**Depreciation First → Preference Second**
+* Data cleaning with IQR outlier handling
+* Feature engineering (age, mileage, engine specs)
+* Random Forest regression (R² ≈ 0.86)
+* Price Index = Actual Price / Predicted Market Price
 
 ---
 
-## How to Run
+## Key Insights
 
-```bash
-pip install -r requirements.txt
-python run.py
-```
+1. Depreciation dominates price formation
+   Age and mileage explain most price variation
+
+2. Mechanical features provide stable premium
+   Engine size and fuel efficiency affect valuation range
+
+3. Preferences influence relative value rather than absolute price
+   Model and fuel type affect positioning within depreciation band
+
+**Conclusion:**
+Used car pricing follows a
+
+> Depreciation First → Preference Second
+> mechanism
+
+---
+
+## Tech Stack
+
+Python, Pandas, Scikit-learn, Data Visualization
 
 ---
 
 ## Author
 
-Undergraduate Data Science Student
-Focus: Data Analysis / Applied Statistics
+Data Science Undergraduate | Interested in Data Analysis & Applied Statistics
+
