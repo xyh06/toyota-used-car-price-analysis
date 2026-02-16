@@ -59,3 +59,4 @@ Author
 Maintained by yh
 Undergraduate in Data Science | Preparing for Applied Statistics
 
+https://nbviewer.org/github/xyh06/toyota-used-car-price-analysis/blob/main/toyota_price_analysis.ipynb
