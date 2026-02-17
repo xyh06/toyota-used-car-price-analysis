@@ -43,8 +43,7 @@ This metric converts a prediction model into a decision-making indicator.
 
 ## Dataset
 
-* UK Toyota used car listings
-* ~6,700 vehicles
+* Approximately 6,700 UK Toyota used vehicle listings
 * Attributes include:
 
   * Model
@@ -110,7 +109,7 @@ This transforms a prediction task into a market behavior analysis problem.
 
 ### Trading implication
 
-The market shows persistent deviation from fundamentals, indicating structural pricing inefficiency.
+This suggests dealerships can systematically improve acquisition decisions using data-driven valuation instead of negotiation-based pricing.
 
 ---
 
@@ -132,17 +131,19 @@ Result:
 
 * Demonstrates data-driven purchasing strategy instead of manual appraisal
 
+Note: Realized profit may vary due to transaction costs, liquidity constraints, and resale time.
+
 ---
 
 ## Project Structure
 
 ```
-toyota-used-car-price-analysis/
-│
+Toyota-Used-Car-Market-Mispricing-Analysis/
+│——Toyota Used Car Market Mispricing Analysis
+|                     └── images/
 ├── data/
 ├── notebook/
-│   └── toyota_price_analysis.ipynb
-├── images/
+│   └── Toyota-Used-Car-Market-Mispricing-Analysis.ipynb
 ├── README.md
 ```
 
