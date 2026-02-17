@@ -190,4 +190,4 @@ The methodology can be generalized to other second-hand markets such as electron
 Independent data analysis project for portfolio demonstration.
 
 
-[https://nbviewer.org/github/xyh06/toyota-used-car-price-analysis/blob/main/toyota_price_analysis.ipynb](https://nbviewer.org/github/xyh06/Toyota-Used-Car-Market-Mispricing-Analysis/blob/main/Toyota%20Used%20Car%20Market%20Mispricing%20Analysis.ipynb)
+
