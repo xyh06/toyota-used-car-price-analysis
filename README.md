@@ -1,4 +1,6 @@
 # Toyota Used Car Market Mispricing Analysis
+A machine learning–driven market analysis identifying systematic pricing inefficiencies 
+and data-driven vehicle acquisition strategies in the used car market.
 
 ## Overview
 
@@ -7,14 +9,14 @@ As a result, vehicles with similar specifications may be priced very differently
 
 Instead of only predicting prices, this project focuses on **detecting pricing inefficiencies** in the market.
 
-We build a machine-learning–based fair price model and analyze the deviation between market price and statistically estimated value to identify potential trading opportunities.
+We build a machine-learning–based fair price model and analyze the deviation between market price and statistically estimated value to identify statistically favorable acquisition opportunities for dealers.
 
 ---
 
 ## Business Problem
 
 The used car market suffers from significant information asymmetry.
-Prices are often determined by seller expectations rather than objective value.
+Market prices often deviate from intrinsic vehicle value due to negotiation, perception, and information asymmetry.
 
 For dealerships and traders, the key challenge is not predicting price, but identifying **mispriced vehicles**.
 
@@ -34,6 +36,8 @@ To solve this, we introduce the **Mispricing Index**:
 | < 0.85      | Undervalued (buy opportunity) |
 | 0.85 – 1.15 | Fair price                    |
 | > 1.15      | Overpriced                    |
+
+This metric converts a prediction model into a decision-making indicator.
 
 ---
 
@@ -75,7 +79,8 @@ A **Random Forest Regressor** is trained to estimate the statistically fair mark
 
 Model output:
 
-> Predicted Price = Fair Price Baseline
+> Predicted Price represents the statistically fair market valuation baseline.
+
 
 ### 4. Mispricing Detection
 
@@ -105,8 +110,7 @@ This transforms a prediction task into a market behavior analysis problem.
 
 ### Trading implication
 
-The market does not price vehicles purely based on fundamentals —
-there exists persistent structural mispricing.
+The market shows persistent deviation from fundamentals, indicating structural pricing inefficiency.
 
 ---
 
@@ -124,7 +128,8 @@ Potential Profit = Predicted Price − Market Price
 
 Result:
 
-* Identifies a subset of listings with statistically positive expected margin
+* Identifies a subset of listings with statistically positive expected acquisition margin under model assumptions
+
 * Demonstrates data-driven purchasing strategy instead of manual appraisal
 
 ---
@@ -157,7 +162,7 @@ toyota-used-car-price-analysis/
 
 This project demonstrates that:
 
-* Predicting price alone has limited business value
+* Pure price prediction has limited decision-making value without deviation analysis
 * Detecting pricing deviation provides actionable insight
 * Machine learning can support acquisition decision-making
 
@@ -167,7 +172,7 @@ The methodology can be generalized to other second-hand markets such as electron
 
 ## Future Work
 
-* Cross-validation and model comparison (XGBoost, Linear Models)
+* Robustness validation and alternative model comparison (XGBoost, Linear Models)
 * SHAP explainability analysis
 * Time-series market trend analysis
 * Dealer profit back-testing
@@ -176,7 +181,8 @@ The methodology can be generalized to other second-hand markets such as electron
 
 ## Author
 
-Independent data analysis project for portfolio demonstration.
+Independent end-to-end data analysis project demonstrating business-oriented modeling workflow.
+
 
 Last updated: 2026
 
