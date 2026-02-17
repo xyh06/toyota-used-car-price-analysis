@@ -178,5 +178,6 @@ The methodology can be generalized to other second-hand markets such as electron
 
 Independent data analysis project for portfolio demonstration.
 
+Last updated: 2026
 
 
