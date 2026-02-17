@@ -139,12 +139,11 @@ Note: Realized profit may vary due to transaction costs, liquidity constraints, 
 
 ```
 Toyota-Used-Car-Market-Mispricing-Analysis/
-│——Toyota Used Car Market Mispricing Analysis
-|                     └── images/
 ├── data/
 ├── notebook/
-│   └── Toyota-Used-Car-Market-Mispricing-Analysis.ipynb
-├── README.md
+│ └── Toyota-Used-Car-Market-Mispricing-Analysis.ipynb
+├── images/
+└── README.md
 ```
 
 ---
