@@ -153,17 +153,6 @@ toyota-used-car-price-analysis/
 
 ---
 
-## How to Run
-
-```bash
-git clone https://github.com/yourname/toyota-used-car-price-analysis.git
-cd toyota-used-car-price-analysis
-pip install -r requirements.txt
-jupyter notebook
-```
-
----
-
 ## Conclusion
 
 This project demonstrates that:
