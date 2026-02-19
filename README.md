@@ -1,143 +1,180 @@
-# Pricing Behavior and Liquidity Risk in the Used Car Market
-### Evidence from Toyota Listings (UK Cross-Sectional Dataset)
+Pricing Behavior and Liquidity Risk in the Used Car Market
+Evidence from Toyota Listings (UK Cross-Sectional Dataset)
 
-[**▶ Live Interactive Report (Full Analysis)**](https://xyh06.github.io/Toyota-Used-Car-Market-Mispricing-Analysis/)
+🔗 Live Interactive Report
+https://xyh06.github.io/Toyota-Used-Car-Market-Mispricing-Analysis/
 
----
+Project Overview
 
-## Abstract
+This project analyzes dealer pricing behavior using approximately 6,700 UK Toyota used-car listings.
 
-This project analyzes dealer pricing behavior using ~6,700 UK Toyota used-car listings.
+Instead of estimating a vehicle’s intrinsic value, a machine learning price model is treated as a market consensus benchmark.
+Listings are evaluated by how much they deviate from that benchmark.
 
-Instead of estimating intrinsic value, a machine learning price model is used as a **market consensus benchmark**.  
-Listings are interpreted by their deviation from this benchmark.
+The goal is behavioral interpretation — not arbitrage detection, profitability estimation, or claims of market inefficiency.
 
-The objective is behavioral interpretation — not arbitrage detection, profitability estimation, or claims of market inefficiency.
+Interactive Visualization
 
----
+Open the full analysis dashboard:
 
-## Motivation
+👉 https://xyh06.github.io/Toyota-Used-Car-Market-Mispricing-Analysis/
+
+The webpage contains all figures, model diagnostics, and descriptive results in a readable report format.
+
+Motivation
 
 Used-car dealers balance two competing objectives:
 
-- Faster turnover — listing below typical market level
-- Margin exploration — listing above market level
+Faster turnover — listing below typical market level
 
-Because the dataset contains **no transaction outcomes**, the project does NOT model:
+Margin exploration — listing above market level to test buyer willingness
 
-- Sale probability
-- Days-on-market
-- Profitability
+Because the dataset contains no transaction outcomes, the project does NOT model:
 
-Instead, it measures relative market positioning.
+Sale probability
 
----
+Days-on-market
 
-## Data
+Profitability
 
-Dataset: Toyota Used Cars Market Insights (Kaggle)  
+Instead, it measures relative positioning within the market price distribution.
+
+Data Source
+
+Dataset: Toyota Used Cars Market Insights (Kaggle, Anas Sarfraz)
+https://www.kaggle.com/datasets/anassarfraz13/toyota-used-car-market-insights
+
 Scope: ~6,738 UK Toyota listings (circa 2020)
 
 Features:
 
-- Model
-- Registration year
-- Mileage
-- Transmission
-- Fuel type
-- Engine size
-- MPG
-- Listing price
+Model
+
+Registration year
+
+Mileage
+
+Transmission
+
+Fuel type
+
+Engine size
+
+MPG
+
+Listing price
 
 Constraints:
 
-- Cross-sectional snapshot only
-- No sale prices
-- No time-to-sale
-- No dealer identity
-- No geography
-- No time variation
+Cross-sectional snapshot only
 
----
+No sale prices
 
-## Methodology
+No time-to-sale
 
-### Market Consensus Price Model
-Random Forest regression estimates expected listing price from attributes.
+No dealer identity
 
-**Test R²: 0.863**
+No geography
 
-Prediction is interpreted as a consensus level, not intrinsic value.
+No time series variation
 
-### Market Acceptance Index (MAI)
+Methodology
+1. Market Consensus Price Model
 
-`MAI = Listing Price / Predicted Market Price`
+Random Forest regression estimates expected listing price from vehicle attributes.
 
-| MAI Range | Interpretation | Pricing Stance |
-|--------|------|------|
-| < 0.90 | Below consensus | Turnover oriented |
-| 0.90 – 1.10 | Near consensus | Market aligned |
-| 1.10 – 1.25 | Premium positioning | Margin exploration |
-| > 1.25 | Large deviation | Elevated acceptance difficulty (proxy) |
+Test R²: 0.863 (MAE/RMSE/MAPE reported in notebook; reasonable for noisy domain)
 
-### High-Deviation Indicator
-`MAI > 1.15`  
-Top-tail deviation exposure (descriptive only)
+The prediction is interpreted as a market consensus level, not intrinsic value.
 
----
+2. Market Acceptance Index (MAI)
 
-## Key Findings
+MAI = Listing Price / Predicted Market Price
 
-- Hybrid vehicles tend to appear at higher relative premiums
-- Vehicles aged 3–6 years show strongest positive deviation
-- Large engines with high mileage often appear in high-deviation listings
+MAI Range	Interpretation	Pricing Stance
+< 0.90	Below consensus	Turnover oriented
+0.90 – 1.10	Near consensus	Market aligned
+1.10 – 1.25	Premium positioning	Margin exploration
+> 1.25	Large deviation	Elevated acceptance difficulty (proxy)
 
-These patterns describe pricing behavior, not profitability or inefficiency.
+MAI measures relative positioning, not correctness of price.
 
----
+3. Behavioral Pattern Analysis
 
-## Limitations
+MAI is analyzed against vehicle characteristics to identify systematic pricing patterns.
 
-- No transaction data → cannot validate sale speed
-- Cross-sectional only → no regional or dealer effects
-- Circa-2020 snapshot
-- Consumer pricing noise
+4. High-Deviation Exposure Indicator
 
----
+Heuristic threshold:
 
-## Skills Demonstrated
+MAI > 1.15
 
-- Feature engineering with incomplete observational data
-- Non-parametric regression modeling
-- Behavioral metric design (MAI)
-- Proxy interpretation discipline
-- Translating ML output into interpretable insights
-- Explicit statistical limitation handling
+Represents top-tail deviation exposure (descriptive only, not a sale probability).
 
----
+Key Findings
 
-## Repository Structure
+Hybrid vehicles tend to list at higher relative premiums (e.g., average MAI ≈ 1.18 for Prius-type models).
 
-```text
-Toyota-Used-Car-Market-Mispricing-Analysis/
-├── toyota.csv
-├── Toyota-Used-Car-Market-Mispricing-Analysis.ipynb
-├── index.html
-├── images/
-└── README.md
-```
+Vehicles aged 3–6 years show the strongest positive deviation (peak mean MAI ≈ 1.12).
 
----
+High mileage combined with large engines frequently appears in high-deviation listings (~18–22% exceed 1.15 threshold).
 
-## Takeaway
 
-A predictive model can function as a behavioral benchmark rather than a valuation tool.
 
-The project demonstrates extracting interpretable patterns from incomplete real-world data while avoiding unsupported causal or profitability claims.
 
----
 
-Author: xyh06  
+
+These patterns describe pricing behavior — not mispricing profitability.
+
+Business Implications
+Dealer Pricing Strategy
+
+High-premium perception vehicles (hybrid trims, low-mileage cars) behave as margin-seeking inventory.
+Dealers may prioritize profit per sale rather than rapid turnover.
+
+Commodity vehicles (economy trims, high mileage) function as liquidity inventory and benefit from competitive pricing.
+
+Inventory Allocation
+
+The results imply a two-tier inventory strategy:
+
+Premium-perception vehicles → hold longer, price above benchmark
+
+Commodity vehicles → price competitively to accelerate sales
+
+Market Risk Signal
+
+Persistent positive deviation in specific categories may indicate demand-driven price pressure rather than valuation accuracy.
+If demand weakens, these categories face larger downward adjustment risk.
+
+Skills Demonstrated
+
+Feature engineering under limited observational data
+
+Non-parametric regression modeling
+
+Custom behavioral metric design (MAI)
+
+Careful proxy interpretation
+
+Translating ML output into interpretable economic insight
+
+Communicating statistical limitations explicitly
+
+Repository Structure
+toyota.csv
+Toyota-Used-Car-Market-Mispricing-Analysis.ipynb
+index.html
+images/
+README.md
+
+Takeaway
+
+A predictive model can serve as a behavioral benchmark rather than a valuation tool.
+
+This project does not attempt to identify arbitrage opportunities,
+but to understand how market participants systematically price assets under bounded rationality.
+
+Author: xyh06
 Last Updated: February 2026
-
 
