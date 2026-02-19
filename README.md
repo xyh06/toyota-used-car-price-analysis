@@ -133,6 +133,7 @@ These patterns describe pricing behavior — not mispricing profitability.
 ---
 
 ## Repository Structure
+
 ├── toyota.csv
 ├── Toyota-Used-Car-Market-Mispricing-Analysis.ipynb
 ├── index.html
